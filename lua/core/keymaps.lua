@@ -19,14 +19,17 @@ keymap.set({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line"
 keymap.set({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })
 
 -- Split window management
-keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width
-keymap.set("n", "<leader>sx", ":close<CR>") -- close split window
-keymap.set("n", "<leader>sj", "<C-w>-") -- make split window height shorter
-keymap.set("n", "<leader>sk", "<C-w>+") -- make split windows height taller
-keymap.set("n", "<leader>sl", "<C-w>>5") -- make split windows width bigger
-keymap.set("n", "<leader>sh", "<C-w><5") -- make split windows width smaller
+keymap.set("n", "<leader>sv", "<C-w>v", { desc = "split window vertically"}) -- split window vertically
+keymap.set("n", "<leader>sh", "<C-w>s", { desc = "split window horizontally" }) -- split window horizontally
+keymap.set("n", "<leader>se", "<C-w>=", { desc = "split window equal" }) -- make split windows equal width
+keymap.set("n", "<leader>sx", ":close<CR>", { desc = "close split" }) -- close split window
+keymap.set("n", "<leader>sj", "<C-w>-", { desc = "height shorter" }) -- make split window height shorter
+keymap.set("n", "<leader>sk", "<C-w>+", { desc = "height taller" }) -- make split windows height taller
+keymap.set("n", "<leader>sl", "<C-w>>5", { desc = "split width bigger" }) -- make split windows width bigger
+keymap.set("n", "<leader>sh", "<C-w><5", { desc = "split width smaller" }) -- make split windows width smaller
+
+-- Vim-maximizer
+keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle maximize tab
 
 -- Tab management
 keymap.set("n", "<leader>bn", ":tabnew<CR>") -- open a new tab
@@ -34,21 +37,19 @@ keymap.set("n", "<leader>bx", "<CMD>BufferLinePickClose<CR>", { desc = "Pick buf
 keymap.set("n", "<C-l>", "<Cmd>BufferLineCycleNext<CR>")
 keymap.set("n", "<C-h>", "<Cmd>BufferLineCyclePrev<CR>") -- previous tab
 
--- Diff keymaps
-keymap.set("n", "<leader>cc", ":diffput<CR>") -- put diff from current to other during diff
-keymap.set("n", "<leader>cj", ":diffget 1<CR>") -- get diff from left (local) during merge
-keymap.set("n", "<leader>ck", ":diffget 3<CR>") -- get diff from right (remote) during merge
-keymap.set("n", "<leader>cn", "]c") -- next diff hunk
-keymap.set("n", "<leader>cp", "[c") -- previous diff hunk
+-- -- Diff keymaps
+-- keymap.set("n", "<leader>cc", ":diffput<CR>") -- put diff from current to other during diff
+-- keymap.set("n", "<leader>cj", ":diffget 1<CR>") -- get diff from left (local) during merge
+-- keymap.set("n", "<leader>ck", ":diffget 3<CR>") -- get diff from right (remote) during merge
+-- keymap.set("n", "<leader>cn", "]c") -- next diff hunk
+-- keymap.set("n", "<leader>cp", "[c") -- previous diff hunk
 
 -- Quickfix list keybinds
-keymap.set("n", "<leader>cn", "<Cmd>cnext<CR>", { desc = "Go to next item in Quickfix list" })
-keymap.set("n", "<leader>cp", "<Cmd>cprev<CR>", { desc = "Go to previous item in Quickfix list" })
-keymap.set("n", "<leader>co", "<Cmd>copen<CR>", { desc = "Open Quickfix List" })
-keymap.set("n", "<leader>cc", "<Cmd>cclose<CR>", { desc = "Close Quickfix List" })
+-- keymap.set("n", "<leader>cn", "<Cmd>cnext<CR>", { desc = "Go to next item in Quickfix list" })
+-- keymap.set("n", "<leader>cp", "<Cmd>cprev<CR>", { desc = "Go to previous item in Quickfix list" })
+-- keymap.set("n", "<leader>co", "<Cmd>copen<CR>", { desc = "Open Quickfix List" })
+-- keymap.set("n", "<leader>cc", "<Cmd>cclose<CR>", { desc = "Close Quickfix List" })
 
--- Vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle maximize tab
 
 -- Nvim-tree
 keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>") -- toggle file explorer
@@ -75,31 +76,31 @@ keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>") -- toggle git blame
 -- Harpoon
 keymap.set("n", "<leader>ha", require("harpoon.mark").add_file)
 keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu)
-keymap.set("n", "<leader>h1", function()
+keymap.set("n", "<leader>1", function()
 	require("harpoon.ui").nav_file(1)
 end)
-keymap.set("n", "<leader>h2", function()
+keymap.set("n", "<leader>2", function()
 	require("harpoon.ui").nav_file(2)
 end)
-keymap.set("n", "<leader>h3", function()
+keymap.set("n", "<leader>3", function()
 	require("harpoon.ui").nav_file(3)
 end)
-keymap.set("n", "<leader>h4", function()
+keymap.set("n", "<leader>4", function()
 	require("harpoon.ui").nav_file(4)
 end)
-keymap.set("n", "<leader>h5", function()
+keymap.set("n", "<leader>5", function()
 	require("harpoon.ui").nav_file(5)
 end)
-keymap.set("n", "<leader>h6", function()
+keymap.set("n", "<leader>6", function()
 	require("harpoon.ui").nav_file(6)
 end)
-keymap.set("n", "<leader>h7", function()
+keymap.set("n", "<leader>7", function()
 	require("harpoon.ui").nav_file(7)
 end)
-keymap.set("n", "<leader>h8", function()
+keymap.set("n", "<leader>8", function()
 	require("harpoon.ui").nav_file(8)
 end)
-keymap.set("n", "<leader>h9", function()
+keymap.set("n", "<leader>9", function()
 	require("harpoon.ui").nav_file(9)
 end)
 
@@ -125,37 +126,39 @@ keymap.set("n", "<leader>tr", "<cmd>lua vim.lsp.buf.document_symbol()<CR>")
 keymap.set("i", "<C-Space>", "<cmd>lua vim.lsp.buf.completion()<CR>")
 
 -- Debugging
-keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
-keymap.set("n", "<leader>bc", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>")
-keymap.set("n", "<leader>bl", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>")
-keymap.set("n", "<leader>br", "<cmd>lua require'dap'.clear_breakpoints()<cr>")
-keymap.set("n", "<leader>ba", "<cmd>Telescope dap list_breakpoints<cr>")
-keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>")
-keymap.set("n", "<leader>dj", "<cmd>lua require'dap'.step_over()<cr>")
-keymap.set("n", "<leader>dk", "<cmd>lua require'dap'.step_into()<cr>")
-keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_out()<cr>")
-keymap.set("n", "<leader>dd", function()
-	require("dap").disconnect()
-	require("dapui").close()
-end)
-keymap.set("n", "<leader>dt", function()
-	require("dap").terminate()
-	require("dapui").close()
-end)
-keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>")
-keymap.set("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>")
-keymap.set("n", "<leader>di", function()
-	require("dap.ui.widgets").hover()
-end)
-keymap.set("n", "<leader>d?", function()
-	local widgets = require("dap.ui.widgets")
-	widgets.centered_float(widgets.scopes)
-end)
-keymap.set("n", "<leader>df", "<cmd>Telescope dap frames<cr>")
-keymap.set("n", "<leader>dh", "<cmd>Telescope dap commands<cr>")
-keymap.set("n", "<leader>de", function()
-	require("telescope.builtin").diagnostics({ default_text = ":E:" })
-end)
+-- keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
+-- keymap.set("n", "<leader>bc", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>")
+-- keymap.set("n", "<leader>bl", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>")
+-- keymap.set("n", "<leader>br", "<cmd>lua require'dap'.clear_breakpoints()<cr>")
+-- keymap.set("n", "<leader>ba", "<cmd>Telescope dap list_breakpoints<cr>")
+-- keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>")
+-- keymap.set("n", "<leader>dj", "<cmd>lua require'dap'.step_over()<cr>")
+-- keymap.set("n", "<leader>dk", "<cmd>lua require'dap'.step_into()<cr>")
+-- keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_out()<cr>")
+-- keymap.set("n", "<leader>dd", function()
+-- 	require("dap").disconnect()
+-- 	require("dapui").close()
+-- end)
+-- keymap.set("n", "<leader>dt", function()
+-- 	require("dap").terminate()
+-- 	require("dapui").close()
+-- end)
+-- keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>")
+-- keymap.set("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>")
+-- keymap.set("n", "<leader>di", function()
+-- 	require("dap.ui.widgets").hover()
+-- end)
+-- keymap.set("n", "<leader>d?", function()
+-- 	local widgets = require("dap.ui.widgets")
+-- 	widgets.centered_float(widgets.scopes)
+-- end)
+-- keymap.set("n", "<leader>df", "<cmd>Telescope dap frames<cr>")
+-- keymap.set("n", "<leader>dh", "<cmd>Telescope dap commands<cr>")
+-- keymap.set("n", "<leader>de", function()
+-- 	require("telescope.builtin").diagnostics({ default_text = ":E:" })
+-- end)
+
+--
 --presistences
 -- restore the session for the current directory
 vim.api.nvim_set_keymap("n", "<leader>qs", [[<cmd>lua require("persistence").load()<cr>]], {})
@@ -168,6 +171,8 @@ vim.api.nvim_set_keymap("n", "<leader>qd", [[<cmd>lua require("persistence").sto
 
 -- keymaps for moving line up/down
 local opts = { noremap = true, silent = true }
+
+-- move line commands
 -- Normal-mode commands
 vim.keymap.set("n", "<A-j>", ":MoveLine(1)<CR>", opts)
 vim.keymap.set("n", "<A-k>", ":MoveLine(-1)<CR>", opts)
