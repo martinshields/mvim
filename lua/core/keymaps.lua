@@ -32,10 +32,11 @@ keymap.set("n", "<leader>sh", "<C-w><5", { desc = "split width smaller" }) -- ma
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle maximize tab
 
 -- Tab management
-keymap.set("n", "<leader>bn", ":tabnew<CR>") -- open a new tab
+keymap.set("n", "<leader>bn", ":tabnew<CR>", {desc = "New buffer"}) -- open a new tab
+keymap.set("n", "<leader>bq", "<cmd>q<CR>", { silent = true, desc = "Close buffer" })
 keymap.set("n", "<leader>bx", "<CMD>BufferLinePickClose<CR>", { desc = "Pick buffer to close" }) -- close a tab
-keymap.set("n", "<C-l>", "<Cmd>BufferLineCycleNext<CR>")
-keymap.set("n", "<C-h>", "<Cmd>BufferLineCyclePrev<CR>") -- previous tab
+keymap.set("n", "<C-l>", "<Cmd>BufferLineCycleNext<CR>", {desc = "next buffer"})
+keymap.set("n", "<C-h>", "<Cmd>BufferLineCyclePrev<CR>", {desc = "previous buffer"}) -- previous tab
 
 -- -- Diff keymaps
 -- keymap.set("n", "<leader>cc", ":diffput<CR>") -- put diff from current to other during diff
@@ -88,24 +89,22 @@ end)
 keymap.set("n", "<leader>4", function()
 	require("harpoon.ui").nav_file(4)
 end)
-keymap.set("n", "<leader>5", function()
-	require("harpoon.ui").nav_file(5)
-end)
-keymap.set("n", "<leader>6", function()
-	require("harpoon.ui").nav_file(6)
-end)
-keymap.set("n", "<leader>7", function()
-	require("harpoon.ui").nav_file(7)
-end)
-keymap.set("n", "<leader>8", function()
-	require("harpoon.ui").nav_file(8)
-end)
-keymap.set("n", "<leader>9", function()
-	require("harpoon.ui").nav_file(9)
-end)
+-- keymap.set("n", "<leader>5", function()
+-- 	require("harpoon.ui").nav_file(5)
+-- end)
+-- keymap.set("n", "<leader>6", function()
+-- 	require("harpoon.ui").nav_file(6)
+-- end)
+-- keymap.set("n", "<leader>7", function()
+-- 	require("harpoon.ui").nav_file(7)
+-- end)
+-- keymap.set("n", "<leader>8", function()
+-- 	require("harpoon.ui").nav_file(8)
+-- end)
+-- keymap.set("n", "<leader>9", function()
+-- 	require("harpoon.ui").nav_file(9)
+-- end)
 
--- Vim REST Console
-keymap.set("n", "<leader>xr", ":call VrcQuery()<CR>") -- Run REST query
 
 -- LSP
 keymap.set("n", "<leader>gg", "<cmd>lua vim.lsp.buf.hover()<CR>")
@@ -172,7 +171,7 @@ vim.api.nvim_set_keymap("n", "<leader>qd", [[<cmd>lua require("persistence").sto
 -- keymaps for moving line up/down
 local opts = { noremap = true, silent = true }
 
--- move line commands
+-- move line commandskeymap.set("n", "<leader>q", "<cmd>q<CR>", { silent = true, desc = "Close buffer" })
 -- Normal-mode commands
 vim.keymap.set("n", "<A-j>", ":MoveLine(1)<CR>", opts)
 vim.keymap.set("n", "<A-k>", ":MoveLine(-1)<CR>", opts)
