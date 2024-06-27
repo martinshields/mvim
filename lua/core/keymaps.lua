@@ -4,12 +4,12 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 -- General keymaps
-keymap.set("i", "jk", "<ESC>") -- exit insert mode with jk
+keymap.set("i", "jk", "<ESC>")                                                     -- exit insert mode with jk
 -- keymap.set("i", "ii", "<ESC>") -- exit insert mode with ii
-keymap.set("n", "<leader>wq", ":wq<CR>") -- save and quit
-keymap.set("n", "<leader>qq", ":q!<CR>") -- quit without saving
-keymap.set("n", "<leader>ww", ":w<CR>") -- save
-keymap.set("n", "gx", ":!open <c-r><c-a><CR>") -- open URL under cursor
+keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "Save and Quit" })               -- save and quit
+keymap.set("n", "<leader>qq", ":q!<CR>", { desc = "Quit without saving" })         -- quit without saving
+keymap.set("n", "<leader>ww", ":w<CR>", { desc = "Write/Save File" })              -- save
+keymap.set("n", "gx", ":!open <c-r><c-a><CR>", { desc = "Open URL under cursor" }) -- open URL under cursor
 vim.keymap.set("n", "C-s", ":w<CR>", { desc = "Save file" })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.keymap.set("n", "<leader>l", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
@@ -19,24 +19,24 @@ keymap.set({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line"
 keymap.set({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })
 
 -- Split window management
-keymap.set("n", "<leader>sv", "<C-w>v", { desc = "split window vertically"}) -- split window vertically
+keymap.set("n", "<leader>sv", "<C-w>v", { desc = "split window vertically" })   -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "split window horizontally" }) -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=", { desc = "split window equal" }) -- make split windows equal width
-keymap.set("n", "<leader>sx", ":close<CR>", { desc = "close split" }) -- close split window
-keymap.set("n", "<leader>sj", "<C-w>-", { desc = "height shorter" }) -- make split window height shorter
-keymap.set("n", "<leader>sk", "<C-w>+", { desc = "height taller" }) -- make split windows height taller
-keymap.set("n", "<leader>sl", "<C-w>>5", { desc = "split width bigger" }) -- make split windows width bigger
-keymap.set("n", "<leader>sh", "<C-w><5", { desc = "split width smaller" }) -- make split windows width smaller
+keymap.set("n", "<leader>se", "<C-w>=", { desc = "split window equal" })        -- make split windows equal width
+keymap.set("n", "<leader>sx", ":close<CR>", { desc = "close split" })           -- close split window
+keymap.set("n", "<leader>sj", "<C-w>-", { desc = "height shorter" })            -- make split window height shorter
+keymap.set("n", "<leader>sk", "<C-w>+", { desc = "height taller" })             -- make split windows height taller
+keymap.set("n", "<leader>sl", "<C-w>>5", { desc = "split width bigger" })       -- make split windows width bigger
+keymap.set("n", "<leader>sh", "<C-w><5", { desc = "split width smaller" })      -- make split windows width smaller
 
 -- Vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle maximize tab
 
 -- Tab management
-keymap.set("n", "<leader>bn", ":tabnew<CR>", {desc = "New buffer"}) -- open a new tab
+keymap.set("n", "<leader>bn", ":tabnew<CR>", { desc = "New buffer" })                            -- open a new tab
 keymap.set("n", "<leader>bq", "<cmd>q<CR>", { silent = true, desc = "Close buffer" })
 keymap.set("n", "<leader>bx", "<CMD>BufferLinePickClose<CR>", { desc = "Pick buffer to close" }) -- close a tab
-keymap.set("n", "<C-l>", "<Cmd>BufferLineCycleNext<CR>", {desc = "next buffer"})
-keymap.set("n", "<C-h>", "<Cmd>BufferLineCyclePrev<CR>", {desc = "previous buffer"}) -- previous tab
+keymap.set("n", "<C-l>", "<Cmd>BufferLineCycleNext<CR>", { desc = "next buffer" })
+keymap.set("n", "<C-h>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "previous buffer" })           -- previous tab
 
 -- -- Diff keymaps
 -- keymap.set("n", "<leader>cc", ":diffput<CR>") -- put diff from current to other during diff
@@ -53,22 +53,23 @@ keymap.set("n", "<C-h>", "<Cmd>BufferLineCyclePrev<CR>", {desc = "previous buffe
 
 
 -- Nvim-tree
-keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>") -- toggle file explorer
-keymap.set("n", "<leader>er", ":NvimTreeFocus<CR>") -- toggle focus to file explorer
+keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>")   -- toggle file explorer
+keymap.set("n", "<leader>er", ":NvimTreeFocus<CR>")    -- toggle focus to file explorer
 keymap.set("n", "<leader>ef", ":NvimTreeFindFile<CR>") -- find file in file explorer
 
 -- Telescope
-keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Find File"})
-keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Live grep"})
-keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "Find buffers"})
-keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "Find help"})
-keymap.set("n", "<leader>fs", require("telescope.builtin").current_buffer_fuzzy_find, { desc = "current buffer fuz find"})
+keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Find File" })
+keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Live grep" })
+keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "Find buffers" })
+keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "Find help" })
+keymap.set("n", "<leader>fs", require("telescope.builtin").current_buffer_fuzzy_find,
+  { desc = "current buffer fuz find" })
 keymap.set("n", "<leader>fo", require("telescope.builtin").lsp_document_symbols, {})
 keymap.set("n", "<leader>fi", require("telescope.builtin").lsp_incoming_calls, {})
 vim.keymap.set("n", "<leader>fr", "<CMD>Telescope oldfiles<CR>", { desc = "open recent files" })
 vim.keymap.set("n", "<leader>fk", "<CMD>Telescope keymaps<CR>", { desc = "Find keymaps" })
 keymap.set("n", "<leader>fm", function()
-	require("telescope.builtin").treesitter({ default_text = ":method:" })
+  require("telescope.builtin").treesitter({ default_text = ":method:" })
 end)
 
 -- Git-blame
@@ -78,16 +79,16 @@ keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>") -- toggle git blame
 keymap.set("n", "<leader>ha", require("harpoon.mark").add_file)
 keymap.set("n", "<leader>hh", require("harpoon.ui").toggle_quick_menu)
 keymap.set("n", "<leader>1", function()
-	require("harpoon.ui").nav_file(1)
+  require("harpoon.ui").nav_file(1)
 end)
 keymap.set("n", "<leader>2", function()
-	require("harpoon.ui").nav_file(2)
+  require("harpoon.ui").nav_file(2)
 end)
 keymap.set("n", "<leader>3", function()
-	require("harpoon.ui").nav_file(3)
+  require("harpoon.ui").nav_file(3)
 end)
 keymap.set("n", "<leader>4", function()
-	require("harpoon.ui").nav_file(4)
+  require("harpoon.ui").nav_file(4)
 end)
 -- keymap.set("n", "<leader>5", function()
 -- 	require("harpoon.ui").nav_file(5)
