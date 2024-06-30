@@ -34,6 +34,7 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle maximize tab
 keymap.set("n", "<leader>bn", ":tabnew<CR>", { desc = "New buffer" }) -- open a new tab
 keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { silent = true, desc = "Close buffer" })
 keymap.set("n", "<leader>bx", "<CMD>BufferLinePickClose<CR>", { desc = "Pick buffer to close" }) -- close a tab
+keymap.set("n", "<leader>bo", "<CMD>BufferLineCloseOthers<CR>", { desc = "close all others" }) -- close a tab
 keymap.set("n", "<C-l>", "<Cmd>BufferLineCycleNext<CR>", { desc = "next buffer" })
 keymap.set("n", "<C-h>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "previous buffer" }) -- previous tab
 
