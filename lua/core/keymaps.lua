@@ -32,7 +32,7 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle maximize tab
 
 -- Tab management
 keymap.set("n", "<leader>bn", ":tabnew<CR>", { desc = "New buffer" }) -- open a new tab
-keymap.set("n", "<leader>bq", "<cmd>q<CR>", { silent = true, desc = "Close buffer" })
+keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { silent = true, desc = "Close buffer" })
 keymap.set("n", "<leader>bx", "<CMD>BufferLinePickClose<CR>", { desc = "Pick buffer to close" }) -- close a tab
 keymap.set("n", "<C-l>", "<Cmd>BufferLineCycleNext<CR>", { desc = "next buffer" })
 keymap.set("n", "<C-h>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "previous buffer" }) -- previous tab
@@ -109,20 +109,20 @@ end)
 -- end)
 
 -- LSP
-keymap.set("n", "<leader>gg", "<cmd>lua vim.lsp.buf.hover()<CR>")
-keymap.set("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-keymap.set("n", "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
-keymap.set("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
-keymap.set("n", "<leader>gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
-keymap.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>")
-keymap.set("n", "<leader>gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-keymap.set("n", "<leader>rr", "<cmd>lua vim.lsp.buf.rename()<CR>")
-keymap.set("n", "<leader>ga", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-keymap.set("n", "<leader>gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
-keymap.set("n", "<leader>gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
-keymap.set("n", "<leader>gn", "<cmd>lua vim.diagnostic.goto_next()<CR>")
-keymap.set("n", "<leader>tr", "<cmd>lua vim.lsp.buf.document_symbol()<CR>")
-keymap.set("i", "<C-Space>", "<cmd>lua vim.lsp.buf.completion()<CR>")
+keymap.set("n", "<leader>gg", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "hover" })
+keymap.set("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "definition" })
+keymap.set("n", "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { desc = "declaration" })
+keymap.set("n", "<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "implementation" })
+keymap.set("n", "<leader>gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { desc = "type_definition" })
+keymap.set("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "references" })
+keymap.set("n", "<leader>gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "signature_help" })
+keymap.set("n", "<leader>rr", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "buff.rename" })
+keymap.set("n", "<leader>ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "code_action" })
+keymap.set("n", "<leader>gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "open_float" })
+keymap.set("n", "<leader>gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "goto_prev" })
+keymap.set("n", "<leader>gn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "goto_next" })
+keymap.set("n", "<leader>tr", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", { desc = "document_symbol" })
+keymap.set("i", "<C-Space>", "<cmd>lua vim.lsp.buf.completion()<CR>", { desc = "completion" })
 
 -- Debugging
 -- keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
