@@ -57,10 +57,17 @@ keymap.set("n", "<leader>er", ":NvimTreeFocus<CR>") -- toggle focus to file expl
 keymap.set("n", "<leader>ef", ":NvimTreeFindFile<CR>") -- find file in file explorer
 
 -- Telescope
+vim.api.nvim_set_keymap(
+	"n",
+	"<Leader>fc",
+	"<cmd>lua require('telescope.builtin').find_files({prompt_title='Plugins', cwd='~/.config/mvim/'})<CR>",
+	{ noremap = true, silent = true }
+)
 keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Find File" })
 keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Live grep" })
 keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "Find buffers" })
 keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "Find help" })
+
 keymap.set(
 	"n",
 	"<leader>fs",
