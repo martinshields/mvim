@@ -11,8 +11,9 @@ keymap.set("n", "<leader>ww", ":w<CR>", { desc = "Write/Save File" }) -- save
 keymap.set("n", "gx", ":!open <c-r><c-a><CR>", { desc = "Open URL under cursor" }) -- open URL under cursor
 vim.keymap.set("n", "C-s", ":w<CR>", { desc = "Save file" })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-vim.keymap.set("n", "<leader>l", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
-vim.keymap.set("n", "<leader>m", "<CMD>Mason<CR>", { desc = "Open Mason" })
+vim.keymap.set("n", "<leader>ul", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
+vim.keymap.set("n", "<leader>um", "<CMD>Mason<CR>", { desc = "Open Mason" })
+vim.keymap.set("n", "<leader>n", "<CMD>NoiceAll<CR>", { desc = "NoiceAll" })
 -- Go to Beginning or End of line
 keymap.set({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
 keymap.set({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })
@@ -28,7 +29,7 @@ keymap.set("n", "<leader>sl", "<C-w>>5", { desc = "split width bigger" }) -- mak
 keymap.set("n", "<leader>sh", "<C-w><5", { desc = "split width smaller" }) -- make split windows width smaller
 
 -- Vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle maximize tab
+keymap.set("n", "<leader>m", ":MaximizerToggle<CR>") -- toggle maximize tab
 
 -- Tab management
 keymap.set("n", "<leader>bn", ":tabnew<CR>", { desc = "New buffer" }) -- open a new tab
@@ -61,7 +62,7 @@ vim.api.nvim_set_keymap(
 	"n",
 	"<Leader>fc",
 	"<cmd>lua require('telescope.builtin').find_files({prompt_title='Plugins', cwd='~/.config/mvim/'})<CR>",
-	{ noremap = true, silent = true }
+	{ noremap = true, silent = true, desc = "find configs" }
 )
 keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Find File" })
 keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Live grep" })
