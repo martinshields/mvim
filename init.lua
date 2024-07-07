@@ -21,6 +21,10 @@ require("lazy").setup("plugins", {
 		enabled = true, -- automatically check for config file changes and reload the ui
 		notify = false, -- turn off notifications whenever plugin changes are made
 	},
+	checker = {
+		enabled = true, -- automatically check for plugin updates
+		notify = true, -- get a notification when new updates are found
+	},
 })
 
 -- These modules are not loaded by lazy
