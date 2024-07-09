@@ -13,6 +13,7 @@ vim.keymap.set("n", "C-s", ":w<CR>", { desc = "Save file" })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.keymap.set("n", "<leader>ul", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 vim.keymap.set("n", "<leader>um", "<CMD>Mason<CR>", { desc = "Open Mason" })
+vim.keymap.set("n", "<leader>ud", "<CMD>Dashboard<CR>", { desc = "Open Dashboard" })
 vim.keymap.set("n", "<leader>n", "<CMD>NoiceAll<CR>", { desc = "NoiceAll" })
 -- Go to Beginning or End of line
 keymap.set({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
