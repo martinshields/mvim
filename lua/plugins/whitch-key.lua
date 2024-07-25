@@ -22,6 +22,7 @@ return {
 			["<leader>2"] = { name = "harpoon 2" },
 			["<leader>3"] = { name = "harpoon 3" },
 			["<leader>4"] = { name = "harpoon 4" },
+			-- { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
 		},
 	},
 	config = function(_, opts)
