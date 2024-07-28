@@ -15,6 +15,7 @@ vim.keymap.set("n", "<leader>ul", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 vim.keymap.set("n", "<leader>um", "<CMD>Mason<CR>", { desc = "Open Mason" })
 vim.keymap.set("n", "<leader>ud", "<CMD>Dashboard<CR>", { desc = "Open Dashboard" })
 vim.keymap.set("n", "<leader>n", "<CMD>NoiceAll<CR>", { desc = "NoiceAll" })
+vim.keymap.set("n", "<leader>p", "<CMD>Telescope yank_history<CR>", { desc = "Yank history" })
 -- Go to Beginning or End of line
 keymap.set({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
 keymap.set({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })
