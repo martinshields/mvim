@@ -6,7 +6,6 @@ return {
 		defaults = {},
 		spec = {
 			mode = { "n", "v" },
-			-- { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
 			{ "<leader>b", group = "+buffers" },
 			{ "<leader>f", group = "+file/find" },
 			{ "<leader>g", group = "+git/def/dai" },
