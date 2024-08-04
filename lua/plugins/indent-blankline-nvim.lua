@@ -6,10 +6,10 @@ return {
 	main = "ibl",
 	opts = {
 		enabled = true,
+		scope = { show_start = true, show_end = true },
 		indent = {
 			char = "|",
 		},
-		scope = { show_start = true, show_end = true },
 		-- scope = {
 		-- 	show_start = true,
 		-- 	show_end = true,
@@ -21,7 +21,7 @@ return {
 				"alpha",
 				"dashboard",
 				"neo-tree",
-				"Trouble",
+				"trouble",
 				"trouble",
 				"lazy",
 				"mason",
