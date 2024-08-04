@@ -32,6 +32,7 @@ require("core.options")
 require("core.keymaps")
 require("bufferline").setup({})
 require("mini.animate").setup()
+-- indent-blankline
 
 --treesitter
 require("nvim-treesitter.configs").setup({
