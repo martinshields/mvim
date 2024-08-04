@@ -35,12 +35,7 @@ require("mini.animate").setup()
 -- indent-blankline
 --mini indent
 require("mini.indentscope").setup()
-vim.api.nvim_exec(
-	[[
-  autocmd BufReadPost,FileReadPost * normal zR
-]],
-	false
-)
+
 --treesitter
 require("nvim-treesitter.configs").setup({
 	-- -- A list of parser names, or "all" (the five listed parsers should always be installed)
