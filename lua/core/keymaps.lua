@@ -39,6 +39,12 @@ keymap.set("n", "<leader>sk", "<C-w>+", { desc = "height taller" }) -- make spli
 keymap.set("n", "<leader>sl", "<C-w>>5", { desc = "split width bigger" }) -- make split windows width bigger
 keymap.set("n", "<leader>sh", "<C-w><5", { desc = "split width smaller" }) -- make split windows width smaller
 
+-- Navigate between splits
+-- vim.keymap.set('n', '<C-k>', ':wincmd k<CR>')
+-- vim.keymap.set('n', '<C-j>', ':wincmd j<CR>')
+-- vim.keymap.set('n', '<C-h>', ':wincmd h<CR>')
+-- vim.keymap.set('n', '<C-l>', ':wincmd l<CR>')
+
 -- Vim-maximizer
 keymap.set("n", "<leader>m", ":MaximizerToggle<CR>") -- toggle maximize tab
 
@@ -47,8 +53,8 @@ keymap.set("n", "<leader>bn", ":tabnew<CR>", { desc = "New buffer" }) -- open a 
 keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { silent = true, desc = "Close buffer" })
 keymap.set("n", "<leader>bx", "<CMD>BufferLinePickClose<CR>", { desc = "Pick buffer to close" }) -- close a tab
 keymap.set("n", "<leader>bo", "<CMD>BufferLineCloseOthers<CR>", { desc = "close all others" }) -- close a tab
-keymap.set("n", "<C-l>", "<Cmd>BufferLineCycleNext<CR>", { desc = "next buffer" })
-keymap.set("n", "<C-h>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "previous buffer" }) -- previous tab
+keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", { desc = "next buffer" })
+keymap.set("n", "<c-Tab>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "previous buffer" }) -- previous tab
 
 -- -- Diff keymaps
 -- keymap.set("n", "<leader>cc", ":diffput<CR>") -- put diff from current to other during diff
