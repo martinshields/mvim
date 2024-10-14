@@ -20,6 +20,9 @@ vim.keymap.set("n", "<leader>p", "<CMD>Telescope yank_history<CR>", { desc = "Ya
 keymap.set({ "n", "v" }, "H", "_^", { desc = "Move to the beginning of the line" })
 keymap.set({ "n", "v" }, "L", "$", { desc = "Move to the end of the line" })
 
+-- Vertical scroll and center
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- surround keybinds
 vim.keymap.set("v", "'", [[:s/\%V\(.*\)\%V/'\1'/ <CR>]], { desc = "Surround selection with '" })
 vim.keymap.set("v", '"', [[:s/\%V\(.*\)\%V/"\1"/ <CR>]], { desc = 'Surround selection with "' })

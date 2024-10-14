@@ -32,7 +32,7 @@ return {
 				"lemminx",
 				"marksman",
 				"quick_lint_js",
-				"tsserver", -- requires npm to be installed
+				-- "tsserver", -- requires npm to be installed
 				"basedpyright", -- requires npm to be installed
 			},
 		})

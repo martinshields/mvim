@@ -1,10 +1,10 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
-	opts = {
-		plugins = { spelling = true },
-		defaults = {},
-		spec = {
+	-- opts = {},
+	config = function()
+		local wk = require("which-key")
+		wk.add({
 			mode = { "n", "v" },
 			{ "<leader>b", group = "+buffers" },
 			{ "<leader>f", group = "+file/find" },
@@ -23,11 +23,6 @@ return {
 			{ "<leader>2", group = "+harpoon 2" },
 			{ "<leader>3", group = "+harpoon 3" },
 			{ "<leader>4", group = "+harpoon 4" },
-		},
-	},
-	config = function(_, opts)
-		local wk = require("which-key")
-		wk.setup(opts)
-		wk.register(opts.defaults)
+		})
 	end,
 }
